@@ -1,12 +1,12 @@
 Summary:	GNOME Klotski
 Summary(pl.UTF-8):	Klotski dla GNOME
 Name:		gnome-klotski
-Version:	3.12.1
+Version:	3.12.2
 Release:	1
 License:	GPL v2
 Group:		X11/Applications/Games
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-klotski/3.12/%{name}-%{version}.tar.xz
-# Source0-md5:	e0b3fd66ce7f1f0ae7eb1c519e4745e1
+# Source0-md5:	00c3f806a1d9d1ae8c876b5baa3a142e
 URL:		https://wiki.gnome.org/Apps/Klotski
 BuildRequires:	appdata-tools
 BuildRequires:	autoconf >= 2.63
