@@ -1,25 +1,28 @@
 Summary:	GNOME Klotski
 Summary(pl.UTF-8):	Klotski dla GNOME
 Name:		gnome-klotski
-Version:	3.12.2
+Version:	3.16.1
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications/Games
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-klotski/3.12/%{name}-%{version}.tar.xz
-# Source0-md5:	00c3f806a1d9d1ae8c876b5baa3a142e
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-klotski/3.16/%{name}-%{version}.tar.xz
+# Source0-md5:	563769ceb9efbf1b7a05f6e917756649
 URL:		https://wiki.gnome.org/Apps/Klotski
-BuildRequires:	appdata-tools
+BuildRequires:	appstream-glib-devel
 BuildRequires:	autoconf >= 2.63
 BuildRequires:	automake >= 1:1.11
-BuildRequires:	gtk+3-devel >= 3.4.0
+BuildRequires:	glib2-devel >= 1:2.40.0
+BuildRequires:	gnome-common
+BuildRequires:	gtk+3-devel >= 3.15.0
 BuildRequires:	intltool >= 0.50.0
 BuildRequires:	librsvg-devel >= 2.32.0
 BuildRequires:	pkgconfig
-BuildRequires:	vala >= 2:0.16.0
+BuildRequires:	vala >= 2:0.27.1
 BuildRequires:	yelp-tools
 Requires(post,postun):	gtk-update-icon-cache
-Requires(post,postun):	glib2 >= 1:2.26.0
-Requires:	gtk+3 >= 3.4.0
+Requires(post,postun):	glib2 >= 1:2.40.0
+Requires:	glib2 >= 1:2.40.0
+Requires:	gtk+3 >= 3.15.0
 Requires:	hicolor-icon-theme
 Requires:	librsvg >= 2.32.0
 Provides:	gnome-games-gnotski = 1:%{version}-%{release}
@@ -60,12 +63,10 @@ rm -rf $RPM_BUILD_ROOT
 
 %post
 %glib_compile_schemas
-%update_icon_cache HighContrast
 %update_icon_cache hicolor
 
 %postun
 %glib_compile_schemas
-%update_icon_cache HighContrast
 %update_icon_cache hicolor
 
 %files -f %{name}.lang
@@ -76,7 +77,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/glib-2.0/schemas/org.gnome.klotski.gschema.xml
 %{_datadir}/gnome-klotski
 %{_desktopdir}/gnome-klotski.desktop
-%{_iconsdir}/HighContrast/*/apps/gnome-klotski.png
-%{_iconsdir}/hicolor/*/apps/gnome-klotski.png
+%{_iconsdir}/hicolor/*x*/apps/gnome-klotski.png
 %{_iconsdir}/hicolor/scalable/apps/gnome-klotski.svg
+%{_iconsdir}/hicolor/scalable/apps/gnome-klotski-symbolic.svg
 %{_mandir}/man6/gnome-klotski.6*
