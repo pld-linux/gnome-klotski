@@ -1,12 +1,12 @@
 Summary:	GNOME Klotski
 Summary(pl.UTF-8):	Klotski dla GNOME
 Name:		gnome-klotski
-Version:	3.20.2
+Version:	3.22.0
 Release:	1
 License:	GPL v3+
 Group:		X11/Applications/Games
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-klotski/3.20/%{name}-%{version}.tar.xz
-# Source0-md5:	72cc89e94878962ded16365fa521e437
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-klotski/3.22/%{name}-%{version}.tar.xz
+# Source0-md5:	72ac00034d42ff5761056896c714b057
 URL:		https://wiki.gnome.org/Apps/Klotski
 BuildRequires:	appstream-glib-devel
 BuildRequires:	autoconf >= 2.63
@@ -14,7 +14,7 @@ BuildRequires:	automake >= 1:1.11
 BuildRequires:	glib2-devel >= 1:2.40.0
 BuildRequires:	gtk+3-devel >= 3.20.0
 BuildRequires:	intltool >= 0.50.0
-BuildRequires:	libgames-support-devel >= 1.0
+BuildRequires:	libgnome-games-support-devel >= 1.0
 BuildRequires:	libgee-devel
 BuildRequires:	librsvg-devel >= 2.32.0
 BuildRequires:	pkgconfig
@@ -25,7 +25,7 @@ Requires(post,postun):	glib2 >= 1:2.40.0
 Requires:	glib2 >= 1:2.40.0
 Requires:	gtk+3 >= 3.20.0
 Requires:	hicolor-icon-theme
-Requires:	libgames-support >= 1.0
+Requires:	libgnome-games-support >= 1.0
 Requires:	librsvg >= 2.32.0
 Provides:	gnome-games-gnotski = 1:%{version}-%{release}
 Obsoletes:	gnome-games-gnotski < 1:3.8.0
