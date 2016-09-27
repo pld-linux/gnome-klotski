@@ -15,7 +15,7 @@ BuildRequires:	glib2-devel >= 1:2.40.0
 BuildRequires:	gtk+3-devel >= 3.20.0
 BuildRequires:	intltool >= 0.50.0
 BuildRequires:	libgnome-games-support-devel >= 1.0
-BuildRequires:	libgee-devel
+BuildRequires:	libgee-devel >= 0.8
 BuildRequires:	librsvg-devel >= 2.32.0
 BuildRequires:	pkgconfig
 BuildRequires:	vala >= 2:0.27.1
