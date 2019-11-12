@@ -1,24 +1,28 @@
 Summary:	GNOME Klotski
 Summary(pl.UTF-8):	Klotski dla GNOME
 Name:		gnome-klotski
-Version:	3.22.1
-Release:	2
+Version:	3.34.0
+Release:	1
 License:	GPL v3+
 Group:		X11/Applications/Games
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-klotski/3.22/%{name}-%{version}.tar.xz
-# Source0-md5:	fd2bd242bdf45b72a3e0aa397ce00673
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-klotski/3.34/%{name}-%{version}.tar.xz
+# Source0-md5:	78c408cb2574c54d61569139b662c438
 URL:		https://wiki.gnome.org/Apps/Klotski
-BuildRequires:	appstream-glib-devel
-BuildRequires:	autoconf >= 2.63
-BuildRequires:	automake >= 1:1.11
+BuildRequires:	appstream-glib
+BuildRequires:	gettext-tools
 BuildRequires:	glib2-devel >= 1:2.40.0
 BuildRequires:	gtk+3-devel >= 3.20.0
-BuildRequires:	intltool >= 0.50.0
 BuildRequires:	libgnome-games-support-devel >= 1.0
 BuildRequires:	libgee-devel >= 0.8
 BuildRequires:	librsvg-devel >= 2.32.0
+BuildRequires:	meson
+BuildRequires:	ninja >= 1.5
 BuildRequires:	pkgconfig
+BuildRequires:	python3 >= 1:3
+BuildRequires:	rpmbuild(macros) >= 1.736
 BuildRequires:	vala >= 2:0.27.1
+BuildRequires:	vala-libgee >= 0.8
+BuildRequires:	vala-librsvg >= 2.32.0
 BuildRequires:	yelp-tools
 Requires(post,postun):	gtk-update-icon-cache
 Requires(post,postun):	glib2 >= 1:2.40.0
@@ -43,20 +47,14 @@ pole ograniczone zielonymi znacznikami.
 %setup -q
 
 %build
-%{__intltoolize}
-%{__aclocal}
-%{__autoconf}
-%{__automake}
-%configure \
-	--disable-silent-rules
+%meson build
 
-%{__make}
+%ninja_build -C build
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT
+%ninja_install -C build
 
 %find_lang %{name} --with-gnome
 
@@ -75,11 +73,10 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc NEWS
 %attr(755,root,root) %{_bindir}/gnome-klotski
-%{_datadir}/appdata/gnome-klotski.appdata.xml
-%{_datadir}/glib-2.0/schemas/org.gnome.klotski.gschema.xml
-%{_datadir}/gnome-klotski
-%{_desktopdir}/gnome-klotski.desktop
-%{_iconsdir}/hicolor/*x*/apps/gnome-klotski.png
-%{_iconsdir}/hicolor/scalable/apps/gnome-klotski.svg
-%{_iconsdir}/hicolor/scalable/apps/gnome-klotski-symbolic.svg
+%{_datadir}/glib-2.0/schemas/org.gnome.Klotski.gschema.xml
+%{_datadir}/metainfo/org.gnome.Klotski.appdata.xml
+%{_desktopdir}/org.gnome.Klotski.desktop
+%{_iconsdir}/hicolor/*x*/apps/org.gnome.Klotski.png
+%{_iconsdir}/hicolor/scalable/apps/org.gnome.Klotski.svg
+%{_iconsdir}/hicolor/symbolic/apps/org.gnome.Klotski-symbolic.svg
 %{_mandir}/man6/gnome-klotski.6*
