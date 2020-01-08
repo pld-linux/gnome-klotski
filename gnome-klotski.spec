@@ -1,12 +1,12 @@
 Summary:	GNOME Klotski
 Summary(pl.UTF-8):	Klotski dla GNOME
 Name:		gnome-klotski
-Version:	3.34.0
+Version:	3.34.3
 Release:	1
 License:	GPL v3+
 Group:		X11/Applications/Games
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-klotski/3.34/%{name}-%{version}.tar.xz
-# Source0-md5:	78c408cb2574c54d61569139b662c438
+# Source0-md5:	73b65abc7396dca95ef973c1c37ca177
 URL:		https://wiki.gnome.org/Apps/Klotski
 BuildRequires:	appstream-glib
 BuildRequires:	gettext-tools
@@ -20,9 +20,11 @@ BuildRequires:	ninja >= 1.5
 BuildRequires:	pkgconfig
 BuildRequires:	python3 >= 1:3
 BuildRequires:	rpmbuild(macros) >= 1.736
+BuildRequires:	tar >= 1:1.22
 BuildRequires:	vala >= 2:0.27.1
 BuildRequires:	vala-libgee >= 0.8
 BuildRequires:	vala-librsvg >= 2.32.0
+BuildRequires:	xz
 BuildRequires:	yelp-tools
 Requires(post,postun):	gtk-update-icon-cache
 Requires(post,postun):	glib2 >= 1:2.40.0
