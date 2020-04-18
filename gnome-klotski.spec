@@ -1,17 +1,17 @@
 Summary:	GNOME Klotski
 Summary(pl.UTF-8):	Klotski dla GNOME
 Name:		gnome-klotski
-Version:	3.34.3
+Version:	3.36.0
 Release:	1
 License:	GPL v3+
 Group:		X11/Applications/Games
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-klotski/3.34/%{name}-%{version}.tar.xz
-# Source0-md5:	73b65abc7396dca95ef973c1c37ca177
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-klotski/3.36/%{name}-%{version}.tar.xz
+# Source0-md5:	f3f06c41fa4912832a3387bfba3925ed
 URL:		https://wiki.gnome.org/Apps/Klotski
 BuildRequires:	appstream-glib
 BuildRequires:	gettext-tools
-BuildRequires:	glib2-devel >= 1:2.40.0
-BuildRequires:	gtk+3-devel >= 3.20.0
+BuildRequires:	glib2-devel >= 1:2.42.0
+BuildRequires:	gtk+3-devel >= 3.22.23
 BuildRequires:	libgnome-games-support-devel >= 1.0
 BuildRequires:	libgee-devel >= 0.8
 BuildRequires:	librsvg-devel >= 2.32.0
@@ -27,9 +27,9 @@ BuildRequires:	vala-librsvg >= 2.32.0
 BuildRequires:	xz
 BuildRequires:	yelp-tools
 Requires(post,postun):	gtk-update-icon-cache
-Requires(post,postun):	glib2 >= 1:2.40.0
-Requires:	glib2 >= 1:2.40.0
-Requires:	gtk+3 >= 3.20.0
+Requires(post,postun):	glib2 >= 1:2.42.0
+Requires:	glib2 >= 1:2.42.0
+Requires:	gtk+3 >= 3.22.23
 Requires:	hicolor-icon-theme
 Requires:	libgnome-games-support >= 1.0
 Requires:	librsvg >= 2.32.0
@@ -75,6 +75,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc NEWS
 %attr(755,root,root) %{_bindir}/gnome-klotski
+%{_datadir}/dbus-1/services/org.gnome.Klotski.service
 %{_datadir}/glib-2.0/schemas/org.gnome.Klotski.gschema.xml
 %{_datadir}/metainfo/org.gnome.Klotski.appdata.xml
 %{_desktopdir}/org.gnome.Klotski.desktop
