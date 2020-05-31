@@ -1,12 +1,12 @@
 Summary:	GNOME Klotski
 Summary(pl.UTF-8):	Klotski dla GNOME
 Name:		gnome-klotski
-Version:	3.36.2
+Version:	3.36.3
 Release:	1
 License:	GPL v3+
 Group:		X11/Applications/Games
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-klotski/3.36/%{name}-%{version}.tar.xz
-# Source0-md5:	7ad98004832fbf89ad055d0282609076
+# Source0-md5:	aea6bb244ad4d6ab60ae7484bab77064
 URL:		https://wiki.gnome.org/Apps/Klotski
 BuildRequires:	appstream-glib
 BuildRequires:	gettext-tools
